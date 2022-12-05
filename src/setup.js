@@ -1,4 +1,4 @@
-const { promises, fstat, constants } = require('fs');
+const { promises, constants } = require('fs');
 const path = require('path');
 const { exit } = require('process');
 
@@ -23,7 +23,7 @@ const startPath = process.cwd();
   console.log('All done! Enjoy your new puzzle! 🎅');
 })();
 
-async function createDirectoryIfItDoesntExist(dir) {
+async function createDirectoryIfItDoesNotExist(dir) {
   try {
     await promises.access(dir, constants.F_OK | constants.W_OK);
   } catch {
@@ -32,7 +32,7 @@ async function createDirectoryIfItDoesntExist(dir) {
   }
 }
 
-async function createFileWithContentIfItDoesntExist(name, content) {
+async function createFileWithContentIfItDoesNotExist(name, content) {
   try {
     await promises.access(name, constants.R_OK);
     console.log(`  File ${name} exists, will not overwrite.`);
@@ -44,14 +44,14 @@ async function createFileWithContentIfItDoesntExist(name, content) {
 
 async function createInputFiles() {
   const inputDayPath = path.join(startPath, 'inputs', `day${day}`);
-  await createDirectoryIfItDoesntExist(inputDayPath);
+  await createDirectoryIfItDoesNotExist(inputDayPath);
 
-  createFileWithContentIfItDoesntExist(
+  createFileWithContentIfItDoesNotExist(
     path.join(inputDayPath, 'part1.txt'),
     `{visit https://adventofcode.com/2022/day/${day} and paste the part 1 input here}`
   );
 
-  createFileWithContentIfItDoesntExist(
+  createFileWithContentIfItDoesNotExist(
     path.join(inputDayPath, 'part2.txt'),
     `{After completing day 1, visit https://adventofcode.com/2022/day/${day} and paste the part 2 input here}`
   );
@@ -62,13 +62,13 @@ async function copyTemplate(from, to) {
     /0/g,
     day
   ); // dirty, I know 😅
-  createFileWithContentIfItDoesntExist(to, content);
+  createFileWithContentIfItDoesNotExist(to, content);
 }
 
 async function createCodeFiles() {
   const templateFolder = path.join(startPath, 'src', 'day0');
   const codeFolder = path.join(startPath, 'src', `day${day}`);
-  await createDirectoryIfItDoesntExist(codeFolder);
+  await createDirectoryIfItDoesNotExist(codeFolder);
   await copyTemplate(
     path.join(templateFolder, 'index.ts'),
     path.join(codeFolder, 'index.ts')
