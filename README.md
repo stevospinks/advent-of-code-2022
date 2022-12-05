@@ -1,23 +1,18 @@
-# Advent of code Typescript Starter
+# Advent of Code 2022
+My JavaScript (with TypeScript) solutions to the [Advent of Code 2022](https://adventofcode.com/2022)
 
-A simple [Advent of code](https://adventofcode.com/) starter project with Typescript and jest for testing.
+Based off [LBognanni's Advent of code Typescript Starter](https://github.com/LBognanni/adventofcode-typescript-starter)
 
 ## How to use
 
-Initial setup
+For each day, where `x` is the day number (1-25):
 
- - `npm install`
-
-For each day, where `X` is the day number (1-25):
-
- - run `npm run setup X` from your terminal
- - Visit [https://adventofcode.com/2021/day/X/input](#fill_in_your_day) and copy the contents in your `inputs/dayX/part1.txt` file
- - Implement the necessary logic in `solveForPart1` 
- - Do the same for part 2
- - `npm run start X` to run the day's test
- - `npm test` to run your tests
- - Profit! 🎉
-
-## Credits
-
-Some code was liberally taken from https://github.com/stemmlerjs/simple-typescript-starter after some serious head-desking
+ - ▶ run `npm run setup x` from your terminal
+ - 🌐 Visit https://adventofcode.com/2022/day/x/input and copy the contents in your `inputs/dayx/input.txt` file
+ - 🔴 Update the example input and result in the test case in your `.spec.ts` file
+ - 🟢 Implement the necessary logic in `solveForPart1` 
+ - 💪 TDD all the things!
+ - 🔁 Do the same for part 2
+ - ⌨ `npm test` to run your tests
+ - ⭐ `npm run start x` to run the day's test
+ - 🎉 Profit!
