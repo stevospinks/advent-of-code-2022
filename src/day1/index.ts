@@ -1,5 +1,5 @@
-import { Day } from "../day";
-import { ImportParser } from "../utils/import-parser";
+import { Day } from '../day';
+import { ImportParser } from '../utils/import-parser';
 
 class Day1 extends Day {
   constructor() {
@@ -21,7 +21,11 @@ class Day1 extends Day {
       cg.reduce((prevC, c) => prevC + c)
     );
     calorieGroupSums.sort((a, b) => b - a);
-    return (calorieGroupSums[0]+calorieGroupSums[1]+calorieGroupSums[2]).toString();
+    return (
+      calorieGroupSums[0] +
+      calorieGroupSums[1] +
+      calorieGroupSums[2]
+    ).toString();
   }
 }
 

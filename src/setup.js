@@ -15,7 +15,7 @@ if (day < 1 || day > 25) {
 const startPath = process.cwd();
 
 (async function () {
-  console.log('\n\n\n  🎄 ADVENT OF CODE 🎄 \n\n');
+  console.log('\n\n\n 🎄 ADVENT OF CODE 🎄 \n\n');
   console.log(`🎁 Setting up day ${day}`);
   await createInputFiles();
   await createCodeFiles();
@@ -90,7 +90,7 @@ async function updateIndex() {
     .replace(
       '// MORE DAYS HERE',
       `day${day},
-    // MORE DAYS HERE`
+  // MORE DAYS HERE`
     );
 
   console.log('  Updating index');
